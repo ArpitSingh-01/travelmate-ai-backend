@@ -1,0 +1,108 @@
+{
+  "name": "PlanTrip",
+  "auto": true,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "trainingPhrases": [
+    {
+      "type": "EXAMPLE",
+      "parts": [
+        {
+          "text": "plan a trip to "
+        },
+        {
+          "text": "Kerala",
+          "entityType": "@sys.geo-state",
+          "alias": "destination",
+          "userDefined": false
+        }
+      ]
+    },
+    {
+      "type": "EXAMPLE",
+      "parts": [
+        {
+          "text": "create an itinerary"
+        }
+      ]
+    },
+    {
+      "type": "EXAMPLE",
+      "parts": [
+        {
+          "text": "I want to visit "
+        },
+        {
+          "text": "Rajasthan",
+          "entityType": "@sys.geo-state",
+          "alias": "destination",
+          "userDefined": false
+        }
+      ]
+    },
+    {
+      "type": "EXAMPLE",
+      "parts": [
+        {
+          "text": "plan my vacation"
+        }
+      ]
+    },
+    {
+      "type": "EXAMPLE",
+      "parts": [
+        {
+          "text": "suggest places to visit"
+        }
+      ]
+    },
+    {
+      "type": "EXAMPLE",
+      "parts": [
+        {
+          "text": "help me explore "
+        },
+        {
+          "text": "Goa",
+          "entityType": "@sys.geo-city",
+          "alias": "destination",
+          "userDefined": false
+        }
+      ]
+    }
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "parameters": [
+        {
+          "id": "destination",
+          "name": "destination",
+          "required": false,
+          "dataType": "@sys.any",
+          "value": "$destination",
+          "isList": false
+        },
+        {
+          "id": "duration",
+          "name": "duration",
+          "required": false,
+          "dataType": "@sys.duration",
+          "value": "$duration",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": "0",
+          "platform": "PLATFORM_UNSPECIFIED",
+          "textToSpeech": "",
+          "lang": "en",
+          "speech": []
+        }
+      ]
+    }
+  ],
+  "priority": 500000
+}

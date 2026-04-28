@@ -1,0 +1,116 @@
+{
+  "name": "BookHotel",
+  "auto": true,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "trainingPhrases": [
+    {
+      "type": "EXAMPLE",
+      "parts": [
+        {
+          "text": "find hotels in "
+        },
+        {
+          "text": "Goa",
+          "entityType": "@sys.geo-city",
+          "alias": "city",
+          "userDefined": false
+        }
+      ]
+    },
+    {
+      "type": "EXAMPLE",
+      "parts": [
+        {
+          "text": "book a hotel"
+        }
+      ]
+    },
+    {
+      "type": "EXAMPLE",
+      "parts": [
+        {
+          "text": "I need accommodation in "
+        },
+        {
+          "text": "Mumbai",
+          "entityType": "@sys.geo-city",
+          "alias": "city",
+          "userDefined": false
+        }
+      ]
+    },
+    {
+      "type": "EXAMPLE",
+      "parts": [
+        {
+          "text": "looking for a room"
+        }
+      ]
+    },
+    {
+      "type": "EXAMPLE",
+      "parts": [
+        {
+          "text": "find me a hotel"
+        }
+      ]
+    },
+    {
+      "type": "EXAMPLE",
+      "parts": [
+        {
+          "text": "where can I stay in "
+        },
+        {
+          "text": "Delhi",
+          "entityType": "@sys.geo-city",
+          "alias": "city",
+          "userDefined": false
+        }
+      ]
+    }
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "parameters": [
+        {
+          "id": "city",
+          "name": "city",
+          "required": false,
+          "dataType": "@sys.geo-city",
+          "value": "$city",
+          "isList": false
+        },
+        {
+          "id": "checkin",
+          "name": "checkin",
+          "required": false,
+          "dataType": "@sys.date",
+          "value": "$checkin",
+          "isList": false
+        },
+        {
+          "id": "checkout",
+          "name": "checkout",
+          "required": false,
+          "dataType": "@sys.date",
+          "value": "$checkout",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": "0",
+          "platform": "PLATFORM_UNSPECIFIED",
+          "textToSpeech": "",
+          "lang": "en",
+          "speech": []
+        }
+      ]
+    }
+  ],
+  "priority": 500000
+}

@@ -1,0 +1,100 @@
+{
+  "name": "CheckWeather",
+  "auto": true,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "trainingPhrases": [
+    {
+      "type": "EXAMPLE",
+      "parts": [
+        {
+          "text": "what's the weather in "
+        },
+        {
+          "text": "Mumbai",
+          "entityType": "@sys.geo-city",
+          "alias": "city",
+          "userDefined": false
+        }
+      ]
+    },
+    {
+      "type": "EXAMPLE",
+      "parts": [
+        {
+          "text": "check weather"
+        }
+      ]
+    },
+    {
+      "type": "EXAMPLE",
+      "parts": [
+        {
+          "text": "will it rain in "
+        },
+        {
+          "text": "Delhi",
+          "entityType": "@sys.geo-city",
+          "alias": "city",
+          "userDefined": false
+        }
+      ]
+    },
+    {
+      "type": "EXAMPLE",
+      "parts": [
+        {
+          "text": "temperature in "
+        },
+        {
+          "text": "Bangalore",
+          "entityType": "@sys.geo-city",
+          "alias": "city",
+          "userDefined": false
+        }
+      ]
+    },
+    {
+      "type": "EXAMPLE",
+      "parts": [
+        {
+          "text": "weather forecast"
+        }
+      ]
+    },
+    {
+      "type": "EXAMPLE",
+      "parts": [
+        {
+          "text": "is it sunny today"
+        }
+      ]
+    }
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "parameters": [
+        {
+          "id": "city",
+          "name": "city",
+          "required": false,
+          "dataType": "@sys.geo-city",
+          "value": "$city",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": "0",
+          "platform": "PLATFORM_UNSPECIFIED",
+          "textToSpeech": "",
+          "lang": "en",
+          "speech": []
+        }
+      ]
+    }
+  ],
+  "priority": 500000
+}

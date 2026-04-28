@@ -1,0 +1,23 @@
+{
+  "name": "Default Fallback Intent",
+  "auto": true,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": true,
+  "trainingPhrases": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "messages": [
+        {
+          "type": "0",
+          "platform": "PLATFORM_UNSPECIFIED",
+          "textToSpeech": "",
+          "lang": "en",
+          "speech": []
+        }
+      ]
+    }
+  ],
+  "priority": 500000
+}
