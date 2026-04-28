@@ -1,5 +1,4 @@
-/*
- * AIML102 Unit 2 — Interaction Model
+/** AIML102 Unit 2 — Interaction Model
  * Demonstrates: Agents, Intents (Default/Custom/Fallback), Training Phrases,
  * Entities, Slot Filling, Parameters
  * 
@@ -7,14 +6,14 @@
  * Demonstrates: Webhook fulfillment, extracting parameter values,
  * structuring responses, cloud function pattern
  */
+
 const express = require('express');
 const router = express.Router();
 const Groq = require('groq-sdk');
 
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
-const SYSTEM_PROMPT = `You are TravelMate, an intelligent travel assistant chatbot 
-built as a Dialogflow fulfillment webhook demonstration for AIML102 Conversational AI.
+const SYSTEM_PROMPT = `You are TravelMate, an intelligent travel assistant chatbot built as a Dialogflow fulfillment webhook demonstration for AIML102 Conversational AI.
 
 You handle these intents:
 - Greeting: greet warmly
@@ -51,9 +50,10 @@ router.post('/', async (req, res) => {
 
     const raw = completion.choices[0]?.message?.content || '';
     const chipsMatch = raw.match(/CHIPS:(\[.*?\])/s);
+    
     let chips = ['Book a Flight', 'Find Hotels', 'Plan a Trip'];
     let reply = raw;
-
+    
     if (chipsMatch) {
       try { chips = JSON.parse(chipsMatch[1]); } catch(e) {}
       reply = raw.replace(/\nCHIPS:\[.*?\]/s, '').trim();
